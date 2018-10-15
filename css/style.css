@@ -42,10 +42,13 @@ div.fund-state{
 /*---fund-chart----*/
 div.fund-chart{
 	margin:0 auto;
-	width:800px;
-	height: 600px;
+
+}
+/*---market-state----*/
+div.market-state{
 	display: block;
-	border:3px solid black;//add border
+	height: 30em;
+	width:100%;
 }
 
 div.fund-state p{

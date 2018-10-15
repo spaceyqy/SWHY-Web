@@ -10,7 +10,6 @@
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.1.0/echarts.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script type="text/javascript" src="https://widget.aicoin.net.cn/chart/js/aicoin.js"></script>
 	
 	<script type="text/javascript">
@@ -94,7 +93,21 @@
 			<div class="fund-state">
 				<p id="fundState2">数据2载入中...</p>
 			</div>
-			<div class="fund-chart" id="fundChart">
+			<div class="fund-chart" id="fundChart1">
+			</div>
+		</div>
+	</div>
+	<!---start-news---->
+	<div class="content-top-grid">
+		<div class="wrap">
+			<div class="content-top-header">
+				<h3>行情动态</h3>
+				<p>数据实时抓取，请尽量不要刷新页面</p>
+			</div>
+			<div class="clear"> </div>
+			<div class="market-state" id="marketState">
+			</div>
+			<div class="market-state" id="kLineMarketState">
 			</div>
 		</div>
 	</div>
@@ -235,6 +248,40 @@
 	</div>
 	<!---Web3.js---->
 	<script>
+	//行情动态插件
+	new AICoin.markets({
+		"symbols": [
+			"bitfinexbtcusd",
+			"huobiprobtcusdt",
+			"bitfinexbchusd",
+			"bitfinexethusd",
+			"okexeosweekusd",
+			"okexxrpbtc",
+			"bittrexxrpbtc",
+			"bitfinexetcusd",
+			"okexetcnextweekusd",
+			"bitfinexltcusd"
+		],
+		"columns": [
+			"degree",
+			"vol",
+			"buy",
+			"sell",
+			"hight",
+			"low"
+		],
+		"style": "tr%7Bheight%3A34px%3B%7D",
+		"container": "marketState",
+		"lang": "zh"
+	})
+	new AICoin.chart({
+        "symbol": "OKCOINFUTURESBTCQUARTERUSD",
+        "default_theme": "dark",
+        "disable_theme_change": true,
+        "container": "kLineMarketState",
+        "lang": "zh",
+        "title": "实时走势图表"
+    })
 
 
 	//获取时间
