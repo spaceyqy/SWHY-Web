@@ -252,31 +252,35 @@
 	new AICoin.markets({
 		"symbols": [
 			"bitfinexbtcusd",
-			"huobiprobtcusdt",
-			"bitfinexbchusd",
+			"okcoinfuturesbtcquarterusd",
 			"bitfinexethusd",
-			"okexeosweekusd",
-			"okexxrpbtc",
+			"okexethquarterusd",
+			"bitfinexeosusd",
+			"okexeosquarterusd",
+			"bitfinexbchusd",
+			"okexbchquarterusd",
 			"bittrexxrpbtc",
-			"bitfinexetcusd",
-			"okexetcnextweekusd",
-			"bitfinexltcusd"
+			"okexxrpquarterusd"
 		],
 		"columns": [
-			"degree",
-			"vol",
 			"buy",
-			"sell",
+			"closing",
+			"degree",
 			"hight",
-			"low"
+			"low",
+			"market_price",
+			"sell",
+			"vol"
 		],
 		"style": "tr%7Bheight%3A34px%3B%7D",
 		"container": "marketState",
 		"lang": "zh"
 	})
+
+	
 	new AICoin.chart({
-        "symbol": "OKCOINFUTURESBTCQUARTERUSD",
-        "default_theme": "dark",
+		"symbol": "OKCOINFUTURESBTCQUARTERUSD",
+        "default_theme": "light",
         "disable_theme_change": true,
         "container": "kLineMarketState",
         "lang": "zh",
@@ -354,8 +358,6 @@
 	}
 	//测试用：显示540-560之间的随机数供显示
 	var myChart = echarts.init(document.getElementById('fundChart'));
-	//显示载入动画
-	myChart.showLoading();
 
 	function getRandomData(){
 		return (540 + 20*Math.random());
