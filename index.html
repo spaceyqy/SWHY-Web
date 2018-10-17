@@ -336,25 +336,37 @@
 					filterMode: 'empty'
 				},],
 				visualMap: {
-					top: 10,
-					right: 10,
-					pieces: [{
+					top: 0,
+					right: 0,
+					pieces: [
+					{
+						lte: 80,
+						color: '#CC0033'
+					}, 
+					{
 						gt: 80,
 						lte: 100,
-						color: '#4c2173'
-					}, {
+						color: '#FFCC33'
+					}, 
+					{
 						gt: 100,
 						lte: 120,
-						color: '#d7003c'
-					}, {
+						color: '#0099CC'
+					}, 
+					{
 						gt: 120,
 						lte: 150,
-						color: '#cc5000'
-					}, 
-					],
-					outOfRange: {
-						color: '#999'
-					}
+						color: '#6666CC'
+					},
+					{
+						gt: 150,
+						lte: 200,
+						color: '#99CC33'
+					},
+					{
+						gt: 200,
+						color: '#339933'
+					}]
 				},
 				series: {
 					name: '1 ETH ',
