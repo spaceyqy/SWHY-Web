@@ -1328,6 +1328,9 @@ article ul {
 	margin-right:2%;
 	text-align:center;
 }
+.team-member p{
+	text-align:left;
+}
 .team-member img{
 	border-radius:50%;
 	-webkit-border-radius:50%;
