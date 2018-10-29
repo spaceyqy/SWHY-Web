@@ -188,6 +188,42 @@ div.fund-state p{
 	width:50%;
 }
 /*---End-slider-banner----*/
+.download input[type="button"]{
+	border: none;
+	background: #86C840;
+	padding:.7em 1.6em;
+	font-family: 'Open Sans', sans-serif;
+	cursor: pointer;
+	color: #FFF;
+	text-transform: uppercase;
+	border-radius: 0.2em;
+	outline:none;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+}
+.download input[type="button"]:hover{
+	background:#222;
+}
+.download input[type="text"],input[type="password"]{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.875em;
+	color: black;
+	font-weight: 400;
+	border: 1.2px solid rgba(168, 168, 168, 0.33);
+	padding: 0.6em 0.8em;
+	outline: none;
+	width: 25%;
+	float: left;
+	margin-right: 10px;
+}
+.download label{
+	float: left;
+	padding-top: 0.3em;
+	padding-left: 20px;
+	padding-right: 10px;
+}
 /*----start-content----*/
 .content-top-header{
 	border-left: 7px solid #85C93E;

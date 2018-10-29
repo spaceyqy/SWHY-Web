@@ -11,6 +11,7 @@
 	<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.1.0/echarts.min.js"></script>
 	<script type="text/javascript" src="https://widget.aicoin.net.cn/chart/js/aicoin.js"></script>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
 
 	<script type="text/javascript">
 		$(window).load(function () {
@@ -38,13 +39,13 @@
 			</div>
 			<div class="top-nav">
 				<ul>
-					<li class="active"><a href="index.html"> <span> </span></a></li>
-					<li><a href="index.html">HOME</a></li>
-					<li><a href="test.html">FUND</a></li>
-					<li><a href="#">AUDIT</a></li>
-					<li><a href="#">NEWSROOM</a></li>
-					<li><a href="team.html">TEAM</a></li>
-					<li><a href="#">PARTNERS</a></li>
+					<li class="active"><a href="index.html">首页</a></li>
+					<li><a href="#">基金</a></li>
+					<li><a href="#">审计</a></li>
+					<li><a href="#">资讯</a></li>
+					<li><a href="team.html">团队</a></li>
+					<li><a href="contact.html">关于我们</a></li>
+					<li><a href="#" onclick="alert('说明书')">说明书</a></li>
 					<div class="clear"> </div>
 				</ul>
 			</div>
@@ -58,18 +59,20 @@
 			<div class="slider-left">
 				<em> </em>
 				<h1>领先的区块链基金</h1>
-				<p>欢迎关注SWHY CryptoFund的社区! 我们致力于基于交易策略分析和加密资产管理的投资者服务生态。我们提供以下服务:</p>
+				<p>欢迎关注SWHY CryptoFund的社区! 我们致力于基于投资策略和数字资产管理的区块链投资者服务生态。我们的使命是:</p>
 				<ul type="circle">
-					<li>最新最有价值的区块链新闻</li>
-					<li>精准的交易策略分析和投资建议</li>
-					<li>积极的加密资产管理</li>
+					<li>持续稳定盈利的投资策略</li>
+					<li>积极的数字资产管理</li>
+					<li>让投资更简单</li>
+					<li>优质区块链项目加速器</li>
+					<li>最新最有价值行业资讯</li>
 				</ul>
 				<div class="clear"> </div>
 
 				<label>快快加入我们！</label>
 				<form>
-					<input type="text" class="textbox" value="电子邮件地址.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '电子邮件地址..';}"><input
-					 type="submit" value="注册" />
+					<input type="text" class="textbox" value="电子邮件地址.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '电子邮件地址..';}">
+					<input type="submit" value="注册" />
 				</form>
 			</div>
 			<div class="slider-right">
@@ -83,15 +86,34 @@
 	<div class="content-top-grid">
 		<div class="wrap">
 			<div class="content-top-header">
-				<h3>基金ETH-SWHY动态</h3>
+				<h3>项目说明书下载</h3>
+				<p>顺为合一加密基金SWHY说明书</p>
+			</div>
+			<div class="clear"> </div>
+			<div class="download">
+				<form method="POST" action="">
+					<label>用户名</label><input type="text" id="name">
+					<label>密码</label><input type="password" id="password">
+					<input type="button" id="clickDownloadBtn" value="点击下载" />
+					<span id="errorMsg" style="color: red"></span>
+				</form>
+			</div>	
+			<div class="clear"> </div>
+		</div>
+	</div>
+	<!---start-content---->
+	<div class="content-top-grid">
+		<div class="wrap">
+			<div class="content-top-header">
+				<h3>ETH-SWHY动态</h3>
 				<p>数据实时抓取，请尽量不要刷新页面</p>
 			</div>
 			<div class="clear"> </div>
 			<div class="fund-state">
-				<p id="fundState1">数据1载入中...</p>
+				<p id="fundState1"><i class="fa fa-spinner fa-pulse"></i></p>
 			</div>
 			<div class="fund-state">
-				<p id="fundState2">数据2载入中...</p>
+				<p id="fundState2"></p>
 			</div>
 			<div class="market-state" id="fundChart">
 			</div>
@@ -238,7 +260,7 @@
 				</ul>
 			</div>
 			<div class="footer-right">
-				<p>Copyright &copy; 2018.Company name All rights reserved.</p>
+				<p>Copyright &copy; 2018.SWHY CryptoFund All rights reserved.</p>
 			</div>
 			<div class="clear"> </div>
 		</div>
@@ -300,7 +322,6 @@
 			//获取时间当横坐标
 			let time = getTimeNow();
 			allData.push([time, ethToSWHY]);
-			console.log(allData);
 			// 指定图表的配置项和数据
 			option = {
 				title: {
@@ -408,6 +429,22 @@
 			//更新兑换关系图表
 			setChartEthToSWHY(myChart, ethToSWHY);
 		}
+	</script>
+	<!-- 有授权的下载文件代码 -->
+	<script>
+		$("#clickDownloadBtn").click(function(){
+			$("#errorMsg").text("");
+			if($("#name").val() != "CryptoFund" && $("#name").val() != "汪明明"){
+				console.log($("#name").val());
+				$("#errorMsg").text("*未授权的用户");
+			}else{
+				if($("#password").val() != "SWHY"){
+					$("#errorMsg").text("*密码错误");
+				}else{
+					window.open("files/顺为合一加密基金招募说明书.pdf");
+				}
+			}
+		});
 	</script>
 </body>
 
