@@ -673,29 +673,57 @@ div.description_content a:hover{
 	-moz-transition:0.5s all;
 	-o-transition:0.5s all;
 }
+/* wechat hover tip */
+.chat-tips img {
+	width: 138px;
+	height: 138px;
+}
+.chat-tips {
+	padding: 3px;
+	border: 1px solid #d1d2d6;
+	position: absolute;
+	right: -150px;
+	top: -120px;
+	background-color: #ffffff;
+	display: none;
+}
+
+.chat-logo:hover .chat-tips {
+	display: block;
+}
+/* footer logo and hover */
 .footer-center ul li:first-child a span{
-	background:url(../images/social-icons.png) no-repeat;
+	background:url(../images/twiter1-logo.png) no-repeat;
+	background-size: contain;
 }
 .footer-center ul li:first-child a span:hover{
-	background:url(../images/social-icons.png) no-repeat 0 100%;
+	background:url(../images/twiter2-logo.png) no-repeat;
+	background-size: contain;
 }
 .footer-center ul li:nth-child(2) a span{
-	background: url(../images/social-icons.png) no-repeat 33% 0%;
+	background: url(../images/telegram1-logo.png) no-repeat;
+	background-size: contain;
 }
 .footer-center ul li:nth-child(2) a span:hover{
-	background: url(../images/social-icons.png) no-repeat 33% 100%;
+	background: url(../images/telegram2-logo.png) no-repeat;
+	background-size: contain;
 }
 .footer-center ul li:nth-child(3) a span{
-	background: url(../images/social-icons.png) no-repeat 67% 0%;
+	background: url(../images/weibo1-logo.png) no-repeat;
+	background-size: contain;
 }
 .footer-center ul li:nth-child(3) a span:hover{
-	background:url(../images/social-icons.png) no-repeat 67% 100%;
+	background:url(../images/weibo2-logo.png) no-repeat;
+	background-size: contain;
 }
 .footer-center ul li:nth-child(4) a span{
-	background: url(../images/social-icons.png) no-repeat 100% 1%;
+	background: url(../images/wechat1-logo.png) no-repeat;
+	background-size: contain;
+	position: relative;
 }
 .footer-center ul li:nth-child(4) a span:hover{
-	background: url(../images/social-icons.png) no-repeat 100% 100%;
+	background: url(../images/wechat2-logo.png) no-repeat;
+	background-size: contain;
 }
 .footer-right p{
 	font-size: 0.875em;
@@ -2340,4 +2368,5 @@ form{
 		margin: 0em 0 0em 0;
 		font-size:1.8em;
 	}
+
 }

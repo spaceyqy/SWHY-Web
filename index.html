@@ -76,7 +76,10 @@
 				</form>
 			</div>
 			<div class="slider-right">
-				<img src="images/slider-img.png" alt="" />
+				<!-- <img src="images/slider-img.png" alt="" /> -->
+				<video src="videos/致敬交易员.mp4" controls="controls">
+					您的浏览器不支持 video 标签。
+				</video>
 			</div>
 			<div class="clear"> </div>
 		</div>
@@ -101,6 +104,20 @@
 			<div class="clear"> </div>
 		</div>
 	</div>
+	<!---start-content---->
+	<!-- <div class="content-top-grid">
+		<div class="wrap">
+			<div class="content-top-header">
+				<h3>宣传视频</h3>
+				<p>致敬交易员</p>
+			</div>
+			<div class="clear"> </div>
+			<video src="videos/致敬交易员.mp4" controls="controls">
+				您的浏览器不支持 video 标签。
+			</video>
+			<div class="clear"> </div>
+		</div>
+	</div> -->
 	<!---start-content---->
 	<div class="content-top-grid">
 		<div class="wrap">
@@ -253,9 +270,9 @@
 			<div class="footer-center">
 				<ul>
 					<li><a href="https://twitter.com/nuaapioneer"><span> </span></a></li>
-					<li><a href="#"><span> </span></a></li>
-					<li><a href="#"><span> </span></a></li>
-					<li><a href="#"><span> </span></a></li>
+					<li><a href="https://t.me/SWHY_CryptoFund"><span> </span></a></li>
+					<li><a href="https://weibo.com/traderbitcoin"><span> </span></a></li>
+					<li><a href="#"><span class="chat-logo"><div class="chat-tips"><img  src="images/wechat-swhy.png" alt="微信订阅号"></div> </span></a></li>
 					<div class="clear"> </div>
 				</ul>
 			</div>
@@ -337,7 +354,8 @@
 					})
 				},
 				yAxis: {
-					min: 400,
+					min: 0,
+					max:250,
 					splitLine: {
 						show: false
 					}
@@ -421,7 +439,7 @@
 			var fundCollectBalance = messageArray[0];
 			var fundDispatchSWHY = messageArray[1];
 			var ethToSWHY = messageArray[2];
-			var myTokenMessage1 = fundCollectBalance + " ETH = " + fundDispatchSWHY + " SWHY";
+			var myTokenMessage1 = fundCollectBalance + " ETH = " + fundDispatchSWHY.toFixed(4) + " SWHY";
 			var myTokenMessage2 = "1 ETH = " + ethToSWHY.toFixed(4) + " SWHY";//四舍五入保留4位有效数
 			//更新兑换关系文本
 			document.getElementById("fundState1").innerText = myTokenMessage1;
