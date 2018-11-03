@@ -224,6 +224,58 @@ div.fund-state p{
 	padding-left: 20px;
 	padding-right: 10px;
 }
+/*----start-progressBar---*/
+.progress-container {
+	margin: 50px auto;
+	width: 640px;
+  }
+  .progress {
+	height: 20px;
+	margin-bottom: 20px;
+	background: #ebebeb;
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-radius: 10px;
+  }
+  .progress .progress-fill {
+	position: relative;
+	float: left;
+	margin: 0 -1px;
+	min-width: 30px;
+	height: 18px;
+	line-height: 16px;
+	text-align: right;
+	background: #86C840;
+	border: 1px solid;
+	border-color: #78b337 #6ba031 #568128;
+	border-radius: 10px;
+	background-image: -webkit-linear-gradient(top, #b7dc8e 0%, #99ce5f 70%, #85c440 100%);
+	background-image: -moz-linear-gradient(top, #b7dc8e 0%, #99ce5f 70%, #85c440 100%);
+	background-image: -o-linear-gradient(top, #b7dc8e 0%, #99ce5f 70%, #85c440 100%);
+	background-image: linear-gradient(to bottom, #b7dc8e 0%, #99ce5f 70%, #85c440 100%);
+	-webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  .progress .progress-text {
+	padding: 0 8px;
+	font-size: 11px;
+	font-weight: bold;
+	color: #404040;
+	color: rgba(0, 0, 0, 0.7);
+	text-shadow: 0 1px rgba(255, 255, 255, 0.4);
+  }
+  .progress .progress-fill:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	height: 18px;
+	background: url("../images/progress-fill.png") 0 0 repeat-x;
+	border-radius: 10px;
+  }
 /*----start-content----*/
 .content-top-header{
 	border-left: 7px solid #85C93E;

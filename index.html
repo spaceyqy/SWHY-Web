@@ -12,7 +12,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.1.0/echarts.min.js"></script>
 	<script type="text/javascript" src="https://widget.aicoin.net.cn/chart/js/aicoin.js"></script>
 	<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
-
+	<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<script type="text/javascript">
 		$(window).load(function () {
 			$('div.description').each(function () {
@@ -126,6 +126,14 @@
 				<p>数据实时抓取，请尽量不要刷新页面</p>
 			</div>
 			<div class="clear"> </div>
+			<!---start-progressBar---->
+			<h2 style="text-align: center;">SWHY发行进度：目前按100SWHY为总发行量计</h2>
+			<div class="progress-container">
+				<div class="progress">
+				  <span id="progress-fill" class ="progress-fill" style="width: 0%;"><span id="progress-text" class="progress-text">0%</span></span>
+				</div>
+			</div>
+			<!---start-fund-state---->
 			<div class="fund-state">
 				<p id="fundState1"><i class="fa fa-spinner fa-pulse"></i></p>
 			</div>
@@ -441,6 +449,10 @@
 			var ethToSWHY = messageArray[2];
 			var myTokenMessage1 = fundCollectBalance + " ETH = " + fundDispatchSWHY.toFixed(4) + " SWHY";
 			var myTokenMessage2 = "1 ETH = " + ethToSWHY.toFixed(4) + " SWHY";//四舍五入保留4位有效数
+			//更新进度条信息，以100SWHY为基准
+			var progressVal = fundDispatchSWHY.toFixed(2) + '%';
+			document.getElementById("progress-fill").style.width = progressVal;
+			document.getElementById("progress-text").innerText = progressVal;
 			//更新兑换关系文本
 			document.getElementById("fundState1").innerText = myTokenMessage1;
 			document.getElementById("fundState2").innerText = myTokenMessage2;
